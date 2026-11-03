@@ -1,0 +1,18 @@
+# ORFS config.mk for ni/C0_golden (top ni_pair).
+# DESIGN_NAME, DESIGN_NICKNAME and VERILOG_FILES are filled in. Copy every other line unchanged from your
+# A1 config.mk: platform sky130hd, 10 ns clock, CORE_UTILIZATION and the flow settings.
+export PLATFORM        = # from your A1 config.mk (sky130hd)
+export DESIGN_NAME     = ni_pair
+export DESIGN_NICKNAME = ni_C0_golden
+export VERILOG_FILES   = $(DESIGN_DIR)/rtl/asynch_comparator.v \
+                         $(DESIGN_DIR)/rtl/depack.v \
+                         $(DESIGN_DIR)/rtl/gray_mod6.v \
+                         $(DESIGN_DIR)/rtl/jk_ff.v \
+                         $(DESIGN_DIR)/rtl/memory.v \
+                         $(DESIGN_DIR)/rtl/new1.v \
+                         $(DESIGN_DIR)/rtl/ni_pair.v \
+                         $(DESIGN_DIR)/rtl/nidepack.v \
+                         $(DESIGN_DIR)/rtl/router_fifo.v \
+                         $(DESIGN_DIR)/rtl/rp1.v
+export SDC_FILE        = $(DESIGN_DIR)/constraint.sdc   # in this folder: two 10 ns clocks
+# every other line: copy from your A1 config.mk
